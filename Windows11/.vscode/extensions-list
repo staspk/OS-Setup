@@ -1,4 +1,5 @@
 azemoh.one-monokai
+chouzz.vscode-better-align
 christian-kohler.npm-intellisense
 jasonnutter.search-node-modules
 mhutchie.git-graph
@@ -9,8 +10,11 @@ ms-python.debugpy
 ms-python.python
 ms-python.vscode-pylance
 ms-vscode-remote.remote-wsl
+ms-vscode.cmake-tools
+ms-vscode.cpptools
+ms-vscode.cpptools-extension-pack
+ms-vscode.cpptools-themes
 ms-vscode.js-debug-nightly
 ms-vscode.powershell
 ms-vscode.vscode-typescript-next
-rust-lang.rust-analyzer
 ryuta46.multi-command
