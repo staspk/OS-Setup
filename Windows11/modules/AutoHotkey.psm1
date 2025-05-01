@@ -1,16 +1,7 @@
+using module .\Kozubenko.Utils.psm1
 
-
-$HOTKEYS = "$PWD\.keyboard\hotkeys.ahk"                                                 # Where the hotkeys are stored in the os-setup project
+$HOTKEYS = "$($MyInvocation.MyCommand.Path)\..\..\.keyboard\hotkeys.ahk"                # Where the hotkeys are stored in the os-setup project
 $STARTUP = "$HOME\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup"        # Where hotkeys.ahk are moved to affect computer
-
-
-function ParentDir($path) {
-    return [System.IO.Path]::GetDirectoryName($path)
-}
-function RunningAsAdmin() {  
-    $user = [Security.Principal.WindowsIdentity]::GetCurrent()
-    (New-Object Security.Principal.WindowsPrincipal $user).IsInRole([Security.Principal.WindowsBuiltinRole]::Administrator)  
-}
 
 function InstallCustomWindowsHotkeys() {
     if(-not(Test-Path $HOTKEYS)) {

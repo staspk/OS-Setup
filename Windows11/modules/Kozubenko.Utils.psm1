@@ -12,6 +12,15 @@ function PrintErrorExit([string]$errorMsg) {
     exit
 }
 
+function ParentDir($path) {
+    return [System.IO.Path]::GetDirectoryName($path)
+}
+
+function RunningAsAdmin() {  
+    $user = [Security.Principal.WindowsIdentity]::GetCurrent()
+    (New-Object Security.Principal.WindowsPrincipal $user).IsInRole([Security.Principal.WindowsBuiltinRole]::Administrator)  
+}
+
 function NumberOfItemsInDir($pathToDir, $isRecursive = $false) {
     if($isRecursive) {
         return (Get-ChildItem -Path $pathToDir -Recurse).Count  }
