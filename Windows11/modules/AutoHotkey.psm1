@@ -48,10 +48,7 @@ function BackupAutoHotkey() {
     try {
         Copy-Item $toBackup $(ParentDir $HOTKEYS)
     }
-    catch {
-        if($?) { PrintGreen "BackupAutoHotkey(): Success"; RETURN $true }
-        else {
-            PrintRed "BackupAutoHotkey(): Failure! Reason: $($_.Exception.Message)"
-        }
-    }
+    catch {  PrintRed "BackupAutoHotkey(): Failure! Reason: $($_.Exception.Message)"; RETURN; }
+
+    PrintGreen "BackupAutoHotkey(): Success"; RETURN $true
 }
